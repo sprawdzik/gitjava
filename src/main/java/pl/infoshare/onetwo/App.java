@@ -1,4 +1,4 @@
-package pl.infoshare;
+package pl.infoshare.onetwo;
 
 import java.util.Random;
 import java.util.Scanner;
