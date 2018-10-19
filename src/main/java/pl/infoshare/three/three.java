@@ -88,7 +88,7 @@ public class three {
             }
         }
 
-        System.out.printf("Trafiłeś: " + win + " z 49");
+        System.out.printf("Trafiłeś: " + win + " z 6");
 
         }
 
