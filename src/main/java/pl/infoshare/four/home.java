@@ -6,25 +6,16 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Scanner;
 
 /**
  * Hello world!
  */
 public class home {
     public static void main(String[] args) throws IOException {
-    //zajecia 4
-    // operacje na plikach
-        //praca domowa
-//        URL url = new URL("https://www.w3.org/TR/PNG/iso_8859-1.txt");
-//        Scanner s = new Scanner(url.openStream());
-
-//        for(int i=0;i<104;i++){
-//            String line = s.nextLine();
-//            System.out.println(line + "");
-//            //System.out.println(s);
-//        }
-
+    /*
+    zajecia 4
+    praca domowa
+     */
 
         try {
 
@@ -34,23 +25,57 @@ public class home {
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 
             String line;
+            byte i = 0; // przejscie petli
+
+            PrintWriter writeAlfa = new PrintWriter("./zajecia4_domowe_alfa.txt");
+            PrintWriter writeDigit = new PrintWriter("./zajecia4_domowe_digit.txt");
+
             while ((line = in.readLine()) != null) {
-                System.out.println(line);
-                
+                //pominięcie nagłówka pobieranego textu
+                if(i>7){
+                        System.out.println(line + " - przejscie petli: " + i + " dlugosc: " +line.length());
+                        //sprawdzam czy linia dluzsza niz 31 znakow
+                        //jezeli tak to dziele na 2 stringi
+                        if(line.length()>31) {
+                            //dziele linie od 0 do 31 znaku
+                            String myString = ((line.substring(0,31)).trim());
+                            sprawdzenie(writeAlfa, writeDigit, myString);
+                            //dziele linie od 32 znaku
+                            myString = ((line.substring(32)).trim());
+                            sprawdzenie(writeAlfa, writeDigit, myString);
+                        }else  {
+                        if (Character.isDigit(line.charAt(0)) && line.length()>0) {
+                            System.out.println("Stringg begins with a digit: " + line + " dlugosc: " + line.length());
+                            writeDigit.print(line + "\n");
+                        } else if (line.length()>0) {
+                            System.out.println("Stringg begins with a NO digit: " + line + " dlugosc: " + line.length());
+                            writeAlfa.print(line + "\n");
+                        }
+                    }
+                }
+                i++;
             }
             in.close();
-
+            writeAlfa.close();
+            writeDigit.close();
         }
         catch (MalformedURLException e) {
-            System.out.println("Malformed URL: " + e.getMessage());
+            System.out.println("Upss..., należy podać link do dokumentu: " + e.getMessage());
         }
         catch (IOException e) {
-            System.out.println("I/O Error: " + e.getMessage());
+            System.out.println("Sprawdź podany link: " + e.getMessage());
         }
+    }
 
-
-
-
+    private static void sprawdzenie(PrintWriter writeAlfa, PrintWriter writeDigit, String myString) {
+        if (myString.length()>0 && Character.isDigit(myString.charAt(0)))
+        {
+            System.out.println("String begins with a digit: " + myString + " dlugosc: " +myString.length());
+            writeDigit.print(myString + "\n");
+        }else if(myString.length()>0){
+            System.out.println("String begins with a NO digit: " + myString+ " dlugosc: " +myString.length());
+            writeAlfa.print(myString + "\n");
+        }
     }
 
 }
