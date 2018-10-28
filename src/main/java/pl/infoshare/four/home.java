@@ -25,6 +25,7 @@ public class home {
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 
             String line;
+            String myString;
             byte i = 0; // przejscie petli
 
             PrintWriter writeAlfa = new PrintWriter("./zajecia4_domowe_alfa.txt");
@@ -38,19 +39,14 @@ public class home {
                         //jezeli tak to dziele na 2 stringi
                         if(line.length()>31) {
                             //dziele linie od 0 do 31 znaku
-                            String myString = ((line.substring(0,31)).trim());
+                            myString = ((line.substring(0,31)).trim());
                             sprawdzenie(writeAlfa, writeDigit, myString);
                             //dziele linie od 32 znaku
                             myString = ((line.substring(32)).trim());
                             sprawdzenie(writeAlfa, writeDigit, myString);
                         }else  {
-                        if (Character.isDigit(line.charAt(0)) && line.length()>0) {
-                            System.out.println("Stringg begins with a digit: " + line + " dlugosc: " + line.length());
-                            writeDigit.print(line + "\n");
-                        } else if (line.length()>0) {
-                            System.out.println("Stringg begins with a NO digit: " + line + " dlugosc: " + line.length());
-                            writeAlfa.print(line + "\n");
-                        }
+                            myString = line.trim();
+                            sprawdzenie(writeAlfa, writeDigit, myString);
                     }
                 }
                 i++;
