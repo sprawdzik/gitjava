@@ -7,6 +7,11 @@ public class Operacje {
     }
 
     public double add(double a, double b){
+        System.out.println("ADD z typem double");
+        return a+b;
+    }
+    public int add(int a, int b){
+        System.out.println("ADD z typem int");
         return a+b;
     }
 

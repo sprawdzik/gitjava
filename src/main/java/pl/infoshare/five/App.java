@@ -3,6 +3,9 @@ package pl.infoshare.five;
 
 import pl.infoshare.five.calculator.Operacje;
 import pl.infoshare.five.pojazdy.Car;
+import pl.infoshare.five.pojazdy.Cat;
+
+import java.awt.*;
 
 /**
  *  zajecia 5
@@ -10,14 +13,36 @@ import pl.infoshare.five.pojazdy.Car;
  */
 public class App {
     public static void main(String[] args) {
-        Operacje calculator = new Operacje();
 
-        String myString = calculator.dopisanie("cos_tam");
-        myString = calculator.dopisanie(myString);
-        myString = calculator.dopisanie(myString);
-        myString = calculator.dopisanie(myString);
+        Operacje operacje1 = new Operacje();
 
-        System.out.println(myString);
+        operacje1.add(2.1,3.3);
+        operacje1.add(1,2);
+
+
+
+//        Cat cat = new Cat();
+//
+//        System.out.println("Kot ma: "+cat.numberOfLegs+" lapy");
+//        System.out.println("Kot jest rasy: "+cat.race);
+//        System.out.println("Kot ma kolor: "+cat.color);
+//
+//        cat.changeColor(Color.DARK_GRAY);
+//
+//        System.out.println("Kot zmienil kolor na "+cat.color);
+
+
+
+        //Operacje calculator = new Operacje();
+
+
+
+//        String myString = calculator.dopisanie("cos_tam");
+//        myString = calculator.dopisanie(myString);
+//        myString = calculator.dopisanie(myString);
+//        myString = calculator.dopisanie(myString);
+//
+//        System.out.println(myString);
 
 
 //        System.out.println(calculator.add(5,5));
