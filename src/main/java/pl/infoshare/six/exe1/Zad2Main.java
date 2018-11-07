@@ -20,14 +20,14 @@ public class Zad2Main {
 
     }
     
-    private static void saveToFile(User... users){
-        PrintWriter printWriter = new PrintWriter("./pliki_zajecia/user_zad2.txt");
-        for (User user:users) {
-            printWriter.append(user.getName()+";"+user.getPassword()+"\n");
-
-        }
-        printWriter.close();
-    }
+//    private static void saveToFile(User... users){
+//        PrintWriter printWriter = new PrintWriter("./pliki_zajecia/user_zad2.txt");
+//        for (User user:users) {
+//            printWriter.append(user.getName()+";"+user.getPassword()+"\n");
+//
+//        }
+//        printWriter.close();
+//    }
 
     private static String redUserInput(){
         Scanner scanner = new Scanner(System.in);

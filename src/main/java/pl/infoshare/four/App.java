@@ -1,17 +1,7 @@
 package pl.infoshare.four;
 
-import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.attribute.FileAttribute;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
