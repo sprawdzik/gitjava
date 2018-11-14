@@ -14,5 +14,10 @@ public class Student extends Osoba {
         return numerIndeksu;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "Numer indeksu: " + numerIndeksu + "\n";
+    }
+
     
 }

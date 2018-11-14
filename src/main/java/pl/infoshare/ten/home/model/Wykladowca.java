@@ -17,4 +17,10 @@ public class Wykladowca extends Osoba {
     public void setTytulNaukowy(String tytulNaukowy) {
         this.tytulNaukowy = tytulNaukowy;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Tytul naukowy: " + tytulNaukowy + "\n";
+    }
+
 }

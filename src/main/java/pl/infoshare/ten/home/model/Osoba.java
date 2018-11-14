@@ -31,6 +31,7 @@ public class Osoba {
 
     @Override
     public String toString(){
-        return "imie: " + imie+ "Data urodzenia: " + rokUrodzenia + " Plec " + plec;
+        return "Imie: " + imie+ "\nNazwisko: " + nazwisko + "\nData urodzenia: " + rokUrodzenia + "\nPlec " + plec +"\n";
     }
+
 }
